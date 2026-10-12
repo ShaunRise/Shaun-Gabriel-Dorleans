@@ -3,13 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shaun-Gabriel Dorléans – Portfolio</title>
+  <title>Shaun-Gabriel Dorléans – Portfolio | Architecture de paysage, Game Design, 3D</title>
   <meta name="description" content="Portfolio de Shaun-Gabriel Dorléans (Shaun Dorléans) : architecture de paysage, game design, 3D et animation. Montréal.">
-  <link rel="canonical" href="https://readymag.website/u2730290103/6155723/">
-  <meta http-equiv="refresh" content="0; url=https://readymag.website/u2730290103/6155723/">
-  <script>window.location.replace("https://readymag.website/u2730290103/6155723/");</script>
+  <meta name="author" content="Shaun-Gabriel Dorléans">
+  <meta property="og:title" content="Shaun-Gabriel Dorléans – Portfolio">
+  <meta property="og:description" content="Architecture de paysage, game design, 3D et animation. Montréal.">
+  <meta property="og:type" content="website">
+  <!-- Colle ici ta balise google-site-verification de Search Console -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Shaun-Gabriel Dorléans",
+    "alternateName": ["Shaun Dorléans", "Shaun-Gabriel"],
+    "jobTitle": "Technicien en horticulture, architecte paysagiste, game designer, artiste 3D",
+    "address": { "@type": "PostalAddress", "addressLocality": "Montréal", "addressRegion": "QC", "addressCountry": "CA" },
+    "url": "https://readymag.website/u2730290103/6155723/"
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg2: #161616;
+      --ink: #ffffff;
+      --muted: #b5b5b5;
+      --accent: #ff5fa2;
+      --leaf: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    /* Halo qui suit la souris */
+    .glow {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background: radial-gradient(500px circle at var(--mx, 50%) var(--my, 30%), rgba(255,95,162,.16), transparent 60%);
+    }
+    main { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 24px 20px 80px; }
+
+    /* Barre du haut */
+    .top { display: flex; justify-content: flex-end; padding: 8px 0; }
+    .lang {
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--muted); border-radius: 999px;
+      padding: 6px 16px; font: inherit; font-size: .9rem; cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .lang:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+    /* En-tête */
+    header { padding: 8vh 0 6vh; }
+    .kicker { color: var(--accent); letter-spacing: .25em; text-transform: uppercase; font-size: .8rem; }
+    h1 { font-size: clamp(2.4rem, 8vw, 5.5rem); line-height: 1.05; margin: 14px 0 18px; font-weight: 400; }
+    h1 span { display: inline-block; transition: transform .25s ease, color .25s ease; }
+    h1 span:hover { transform: translateY(-10px) rotate(-4deg); color: var(--accent); }
+    .tagline { max-width: 560px; font-size: 1.15rem; }
+
+    .cta {
+      display: inline-block; margin-top: 30px;
+      background: var(--accent); color: var(--bg);
+      padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: bold;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .cta:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 30px rgba(255,95,162,.4); }
+
+    /* Cartes */
+    h2 { font-size: 1.1rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-weight: 400; margin: 40px 0 20px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .card {
+      background: linear-gradient(160deg, var(--bg2), #080808);
+      border: 1px solid rgba(241,234,216,.12);
+      border-radius: 16px; padding: 26px;
+      text-decoration: none; color: inherit; display: block;
+      transition: transform .15s ease, border-color .2s, box-shadow .2s;
+      transform-style: preserve-3d;
+    }
+    .card:hover { border-color: var(--leaf); box-shadow: 0 16px 40px rgba(0,0,0,.4); }
+    .card .num { color: var(--accent); font-size: .85rem; letter-spacing: .15em; }
+    .card h3 { font-size: 1.5rem; font-weight: 400; margin: 8px 0; }
+    .card p { color: var(--muted); font-size: .98rem; }
+    .card .arrow { display: inline-block; margin-top: 14px; color: var(--leaf); transition: transform .2s; }
+    .card:hover .arrow { transform: translateX(8px); }
+
+    /* Projets : accordéon */
+    .projects { list-style: none; }
+    .projects li { border-top: 1px solid rgba(241,234,216,.12); }
+    .projects li:last-child { border-bottom: 1px solid rgba(241,234,216,.12); }
+    .projects button {
+      width: 100%; background: none; border: none; color: var(--ink);
+      font: inherit; font-size: 1.3rem; text-align: left; cursor: pointer;
+      padding: 20px 4px; display: flex; justify-content: space-between; align-items: center;
+      transition: color .2s, padding-left .2s;
+    }
+    .projects button:hover { color: var(--accent); padding-left: 14px; }
+    .projects button::after { content: "+"; font-size: 1.6rem; transition: transform .25s; }
+    .projects li.open button::after { transform: rotate(45deg); }
+    .projects .more { max-height: 0; overflow: hidden; color: var(--muted); transition: max-height .35s ease; padding: 0 4px; }
+    .projects li.open .more { max-height: 140px; padding-bottom: 18px; }
+
+    footer { margin-top: 70px; color: var(--muted); font-size: .9rem; }
+    footer a { color: var(--accent); }
+
+    /* Apparition au défilement */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
-  <p><a href="https://readymag.website/u2730290103/6155723/">Portfolio de Shaun-Gabriel Dorléans</a></p>
+  <div class="glow" aria-hidden="true"></div>
+
+  <main>
+    <div class="top">
+      <button class="lang" id="lang" aria-label="Changer de langue / Switch language">English</button>
+    </div>
+
+    <header>
+      <p class="kicker" data-fr="Montréal · Portfolio" data-en="Montréal · Portfolio">Montréal · Portfolio</p>
+      <h1 id="name" aria-label="Shaun-Gabriel Dorléans">Shaun-Gabriel Dorléans</h1>
+      <p class="tagline"
+         data-fr="Technicien en horticulture, formé en architecture de paysage et en game design. Je crée en 3D, en animation et en design interactif."
+         data-en="Horticulture technician trained in landscape architecture and game design. I create in 3D, animation and interactive design.">
+        Technicien en horticulture, formé en architecture de paysage et en game design. Je crée en 3D, en animation et en design interactif.
+      </p>
+      <a class="cta" href="https://readymag.website/u2730290103/6155723/"
+         data-fr="Entrer dans le portfolio →" data-en="Enter the portfolio →">Entrer dans le portfolio →</a>
+    </header>
+
+    <section class="reveal">
+      <h2 data-fr="Trois univers" data-en="Three worlds">Trois univers</h2>
+      <div class="cards">
+        <a class="card" href="https://readymag.website/u2730290103/6155723/">
+          <span class="num">01</span>
+          <h3 data-fr="Architecture de paysage" data-en="Landscape architecture">Architecture de paysage</h3>
+          <p data-fr="Projets de paysage, plantes et espaces vivants." data-en="Landscape projects, plants and living spaces.">Projets de paysage, plantes et espaces vivants.</p>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://readymag.website/u2730290103/6155723/">
+          <span class="num">02</span>
+          <h3 data-fr="Game Design" data-en="Game Design">Game Design</h3>
+          <p data-fr="Jeux, personnages et directions artistiques." data-en="Games, characters and art direction.">Jeux, personnages et directions artistiques.</p>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://readymag.website/u2730290103/6155723/">
+          <span class="num">03</span>
+          <h3 data-fr="Illustrations & Extras" data-en="Illustrations & Extras">Illustrations & Extras</h3>
+          <p data-fr="Illustrations, scènes 3D et expérimentations." data-en="Illustrations, 3D scenes and experiments.">Illustrations, scènes 3D et expérimentations.</p>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <h2 data-fr="Projets à découvrir" data-en="Projects to explore">Projets à découvrir</h2>
+      <ul class="projects">
+        <li>
+          <button type="button" data-fr="À la croisée des courants" data-en="À la croisée des courants">À la croisée des courants</button>
+          <div class="more"><p data-fr="Projet d'architecture de paysage. Détails complets dans le portfolio." data-en="Landscape architecture project. Full details in the portfolio.">Projet d'architecture de paysage. Détails complets dans le portfolio.</p></div>
+        </li>
+        <li>
+          <button type="button" data-fr="Rétention lumineuse" data-en="Rétention lumineuse">Rétention lumineuse</button>
+          <div class="more"><p data-fr="Projet présenté dans le portfolio. Découvre-le en entier sur Readymag." data-en="Project featured in the portfolio. See it in full on Readymag.">Projet présenté dans le portfolio. Découvre-le en entier sur Readymag.</p></div>
+        </li>
+        <li>
+          <button type="button" data-fr="Thumbs of Madness" data-en="Thumbs of Madness">Thumbs of Madness</button>
+          <div class="more"><p data-fr="Jeu de combat beat 'em up réalisé avec Unity, en équipe." data-en="Beat 'em up game made with Unity, as a team.">Jeu de combat beat 'em up réalisé avec Unity, en équipe.</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Shaun-Gabriel Dorléans ·
+        <a href="https://readymag.website/u2730290103/6155723/" data-fr="Portfolio complet" data-en="Full portfolio">Portfolio complet</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Halo qui suit la souris
+    const root = document.documentElement;
+    window.addEventListener('pointermove', e => {
+      root.style.setProperty('--mx', e.clientX + 'px');
+      root.style.setProperty('--my', e.clientY + 'px');
+    });
+
+    // Nom découpé en lettres pour l'effet de vague au survol
+    const name = document.getElementById('name');
+    name.innerHTML = [...name.textContent].map(c =>
+      c === ' ' ? ' ' : '<span aria-hidden="true">' + c + '</span>').join('');
+
+    // Inclinaison 3D des cartes
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5;
+        const y = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = 'perspective(700px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+
+    // Accordéon des projets
+    document.querySelectorAll('.projects button').forEach(btn => {
+      btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
+    });
+
+    // Apparition au défilement
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
+    }, { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Bascule FR / EN
+    let lang = 'fr';
+    const btn = document.getElementById('lang');
+    btn.addEventListener('click', () => {
+      lang = lang === 'fr' ? 'en' : 'fr';
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        const t = el.getAttribute('data-' + lang);
+        if (el.tagName === 'P' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'A' || el.tagName === 'BUTTON' || el.tagName === 'SPAN') {
+          // Garde la flèche des cartes intacte
+          if (!el.classList.contains('arrow')) el.textContent = t;
+        }
+      });
+      btn.textContent = lang === 'fr' ? 'English' : 'Français';
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
