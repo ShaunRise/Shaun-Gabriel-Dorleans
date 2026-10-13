@@ -79,19 +79,17 @@
     h2 { font-size: 1.1rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-weight: 400; margin: 40px 0 20px; }
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .card {
-      background: linear-gradient(160deg, var(--bg2), #080808);
-      border: 1px solid rgba(241,234,216,.12);
-      border-radius: 16px; padding: 26px;
-      text-decoration: none; color: inherit; display: block;
-      transition: transform .15s ease, border-color .2s, box-shadow .2s;
-      transform-style: preserve-3d;
-    }
-    .card:hover { border-color: var(--leaf); box-shadow: 0 16px 40px rgba(0,0,0,.4); }
-    .card .num { color: var(--accent); font-size: .85rem; letter-spacing: .15em; }
-    .card h3 { font-size: 1.5rem; font-weight: 400; margin: 8px 0; }
-    .card p { color: var(--muted); font-size: .98rem; }
-    .card .arrow { display: inline-block; margin-top: 14px; color: var(--leaf); transition: transform .2s; }
-    .card:hover .arrow { transform: translateX(8px); }
+  background: transparent;
+  border: 1px solid var(--ink);   /* contour blanc */
+  border-radius: 16px; padding: 26px;
+  text-decoration: none; color: inherit; display: block;
+  transition: transform .15s ease, background .2s, box-shadow .2s;
+  transform-style: preserve-3d;
+}
+.card:hover {
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 0 24px rgba(255,255,255,.12);
+}
 
     /* Projets : accordéon */
     .projects { list-style: none; }
